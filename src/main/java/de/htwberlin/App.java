@@ -13,6 +13,7 @@ public class App {
     t.timeSwitcher("07:05:45 PM");
     t.timeSwitcher("07:05:32 AM");
    t.timeSwitcher("12:05:29 PM");
+   System.out.println("---------------------------");
     t.timeSwitcher("12:05:00 AM");
     // TODO: Rufen Sie hier Ihre Methode auf
   }

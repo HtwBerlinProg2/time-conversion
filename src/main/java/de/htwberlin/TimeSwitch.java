@@ -8,13 +8,12 @@ public class TimeSwitch {
     public TimeSwitch() {
     }
 
-    public ArrayList<String> timeSwitcher(String in){
+    public String timeSwitcher(String in){
         String[] time = in.split( "[ :]+");
         String oldtime;
         int newtime = 0 ;
         int converted = 0;
-
-         this.Switcher.clear();
+        this.Switcher.clear();
 
 
         for(String i : time){
@@ -29,29 +28,27 @@ public class TimeSwitch {
                 time[0]= String.valueOf(converted);
             }
 
-            if(i.equals("PM") && converted!= 12){
-                for(int j=0; j<12;j++){
+            if(i.equals("PM") && converted!= 12) {
+                for (int j = 0; j < 12; j++) {
                     if (newtime < 12)
-                   newtime += 1 ;
+                        newtime += 1;
 
                 }
-                converted= Integer.parseInt(oldtime) + newtime;
+                converted = Integer.parseInt(oldtime) + newtime;
 
-                if(converted >24 ){
+                if (converted > 24) {
                     converted = 0;
                 }
-                time[0]= String.valueOf(converted);
-
+                time[0] = String.valueOf(converted);
             }
-
         }
+
         Switcher.add(time[0]);
         Switcher.add(time[1]);
         Switcher.add(time[2]);
-        System.out.println("------------");
 
-        System.out.println(Switcher);
-        return this.Switcher;
+
+        return time[0]+":"+time[1]+":"+time[2];
     }
 
 
